@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "FF Save Tabs",
+    "version": "1.1.0",
+    "description": "Save open tabs into folders to reopen later. A secondary bookmark system with export and import.",
+    "permissions": ["tabs", "storage", "downloads", "clipboardWrite"],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "ffsavetabs@revoconner",
+            "data_collection_permissions": {
+                "required": ["none"]
+            }
+        }
+    },
+    "icons": {
+        "48": "icon.svg",
+        "96": "icon.svg"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "action": {
+        "default_title": "FF Save Tabs",
+        "default_popup": "popup.html",
+        "default_icon": "icon.svg"
+    }
+}

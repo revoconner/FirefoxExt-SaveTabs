@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>FF Save Tabs - Import</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #10141b;
+            --panel: #232b3a;
+            --btn: #333f57;
+            --btn-hover: #40506e;
+            --border: #2c3648;
+            --text: #dbe2ee;
+            --text-dim: #8b96a8;
+            --accent: #5b8cff;
+            --accent-hover: #7aa2ff;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg);
+            color: var(--text);
+            font-family: system-ui, sans-serif;
+            font-size: 1rem;
+        }
+        #card {
+            width: 420px;
+            padding: 32px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        p {
+            margin: 0;
+            color: var(--text-dim);
+        }
+        button {
+            font: inherit;
+            color: var(--text);
+            background: var(--btn);
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: var(--btn-hover);
+        }
+        #pick {
+            background: var(--accent);
+            color: #0d1117;
+            font-weight: 600;
+        }
+        #pick:hover {
+            background: var(--accent-hover);
+        }
+        #result {
+            min-height: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+        <h1>Import FF Save Tabs backup</h1>
+        <p>Pick a JSON backup file. Folders are merged with what you already have, nothing gets deleted.</p>
+        <button id="pick">Choose JSON file</button>
+        <p id="result"></p>
+        <button id="close" hidden>Close this tab</button>
+        <input type="file" id="file" accept=".json,application/json" hidden>
+    </div>
+    <script src="import.js"></script>
+</body>
+</html>
